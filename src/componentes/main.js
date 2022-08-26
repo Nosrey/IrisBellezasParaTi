@@ -2,51 +2,56 @@ import react, { useState } from 'react';
 import './main.css';
 
 function Main() {
-  let pagar = 0;
-  let bolivares = 0;
 
   const [dolar, setDolar] = useState(0);
-  const [monto, setMonto] = useState(0);
-  const [precioBar, setPrecioBar] = useState(0);
+  const [montoCliente, setmontoCliente] = useState(0);
+  const [precioProducto, setprecioProducto] = useState(0);
 
   let handleChangeDolar = function (e) {
     setDolar(e.target.value);
   }
-  let handleChangeMonto = function (e) {
-    setMonto(e.target.value);
+  let handleChangemontoCliente = function (e) {
+    setmontoCliente(e.target.value);
   }
-  let handleChangePrecioBar = function (e) {
-    setPrecioBar(e.target.value);
+  let handleChangeprecioProducto = function (e) {
+    setprecioProducto(e.target.value);
     calcular();
- }
+  }
 
   let calcular = function () {
-    let mano = Number(monto) - Number(precioBar);
+    let mano = Number(montoCliente) - Number(precioProducto);
     let bolivares = mano;
-    while(bolivares >= 1) {
+    while (bolivares >= 1) {
       --bolivares;
     }
     mano = mano - bolivares;
     if (bolivares != 0 && bolivares < 1) {
       bolivares = bolivares * Number(dolar);
     }
-    return 'el monto es: ' + (mano >= 1 ? mano : 0) + '$ y ' + (bolivares < 0 ? 0 : bolivares) + ' bolivares';
+    // return 'el monto es: ' + (mano >= 1 ? mano : 0) + '$ y ' + (bolivares < 0 ? 0 : bolivares) + ' bolivares';
+    return (mano >= 1 ? mano : 0) + '$ y ' + (bolivares < 0 ? 0 : bolivares.toFixed(2)) + 'Bs';
   }
+
   return (
-    <div>
-      <h1>Conversor de precios</h1>
-      <h2>Ingresa el precio del dolar: </h2>
-      <input id="dolar" type="search" name="1" value={dolar} onChange={handleChangeDolar} />
-      <br />
-      <br />
-      <h2>Ingresa cuanto dinero te dan: </h2>
-      <input id="monto" type="search" name="1" value={monto} onChange={handleChangeMonto} />
-      <br />
-      <br />
-      <h2>Ingresa el precio de los productos: </h2>
-      <input id="precioBar" type="search" name="1" value={precioBar} onChange={handleChangePrecioBar} />
-      <br />
-      <br />
+    <div id="global">
+      <div id="cajaDatos">
+        <h1>Conversor de precios</h1>
+        <div id="datos">
+          <span id="dolarBlock">
+            <h2>Dolar: </h2>
+            <input id="dolar" type="search" name="1" value={dolar} onChange={handleChangeDolar} />
+          </span>
+          <span id="montoClienteBlock">
+            <h2>Cliente: </h2>
+            <input id="montoCliente" type="search" name="1" value={montoCliente} onChange={handleChangemontoCliente} />
+          </span>
+          <span id="precioProductoBlock">
+            <h2>Productos: </h2>
+            <input id="precioProducto" type="search" name="1" value={precioProducto} onChange={handleChangeprecioProducto} />
+          </span>
+        </div>
+      </div>
+
       <p>{calcular()}</p>
     </div>
   );

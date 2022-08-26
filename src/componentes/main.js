@@ -29,13 +29,13 @@ function Main() {
       bolivares = bolivares * Number(dolar);
     }
     // return 'el monto es: ' + (mano >= 1 ? mano : 0) + '$ y ' + (bolivares < 0 ? 0 : bolivares) + ' bolivares';
-    return (mano >= 1 ? mano : 0) + '$ y ' + (bolivares < 0 ? 0 : bolivares.toFixed(2)) + 'Bs';
+    return (mano >= 1 ? mano : 0) + '$ y ' + (bolivares < 0 ? 0 : bolivares.toFixed(1)) + 'Bs';
   }
 
   return (
     <div id="global">
       <div id="cajaDatos">
-        <h1>Conversor de precios</h1>
+        <h1>¿Cuanto vuelto dar?</h1>
         <div id="datos">
           <span id="dolarBlock">
             <h2>Dolar: </h2>

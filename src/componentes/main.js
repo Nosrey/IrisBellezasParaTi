@@ -34,7 +34,7 @@ function Main() {
     }
     // return 'el monto es: ' + (mano >= 1 ? mano : 0) + '$ y ' + (bolivares < 0 ? 0 : bolivares) + ' bolivares';
     return (
-      (mano >= 1 ? mano : 0) + '$ y ' + (bolivares < 0 ? 0 : bolivares.toFixed(1)) + 'Bs'
+      (mano >= 1 ? mano : 0) + '$ y ' + (isNaN(Number(bolivares)) ? 0 : (bolivares < 0 ? 0 : bolivares.toFixed(1))) + 'Bs'
     )
   }
 

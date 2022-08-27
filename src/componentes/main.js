@@ -23,7 +23,7 @@ function Main() {
   }
 
   let calcular = function () {
-    let mano = Number(Pago) - Number(Costo);
+    let mano = Number(Pago) - ((Number(Costo) * Number(Dolar)) / Number(Bcv)) 
     let bolivares = mano;
     while (bolivares >= 1) {
       --bolivares;

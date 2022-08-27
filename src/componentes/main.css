@@ -1,5 +1,16 @@
+html {
+    background-image: url('../calculadora.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: bottom;
+    background-color: rgba(73,68,188,255);
+}
+
 #global {
-    padding: 0;
+    padding: 5px;
+    margin: 10px;
+    background-color: RGBA(255,255,255,0.85);
+    border-radius: 10px;
 }
 
 h1 {
@@ -8,20 +19,21 @@ h1 {
 
 h2 {
     font-size: 1.2rem;
-    text-align: center;   
+    
 }
 
 h3 {
     font-size: 2.2rem;
     text-align: center;
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
 p {
     font-size: 4rem;
     text-align: center;
     margin-top:  10px;
-    color: rgb(65, 64, 64)
+    margin-bottom:  15px;
+    color: rgb(0, 0, 0)
 }
 
 #cajaDatos {
@@ -30,14 +42,14 @@ p {
     margin: 0;
     padding: 15px;
     padding-top: 5px;
-    border-radius: 0 0 5px 5px;
+    border-radius:  10px
 }
 
 #datos span input {
     margin-top: 10px;
-    margin-left: 0;
-    width: 40%;
-    font-size: 1.3rem;
+    justify-content: center;
+    width: 70%;
+    font-size: 1.1rem;
 }
 
 #datos {

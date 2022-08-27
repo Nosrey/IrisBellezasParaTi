@@ -30,7 +30,7 @@ function Main() {
     }
     mano = mano - bolivares;
     if (bolivares !== 0 && bolivares < 1) {
-      bolivares = bolivares * Number(Dolar);
+      bolivares = bolivares * Number(Bcv);
     }
     // return 'el monto es: ' + (mano >= 1 ? mano : 0) + '$ y ' + (bolivares < 0 ? 0 : bolivares) + ' bolivares';
     return (
@@ -47,15 +47,7 @@ function Main() {
     }
     costito = costito - decimal;
     decimal = decimal * Number(Bcv);
-
-    console.log(Costo)
-    console.log(Dolar)
-
-    console.log(total)
-    console.log(costito == NaN)
-    console.log(decimal)
-
-    return total + 'Bs | de ' + (isNaN(costito) ? 0 : costito) + '$ y ' + (isNaN(decimal) ? 0 : decimal.toFixed(1)) + 'Bs'
+    return total.toFixed(1) + 'Bs o ' + (isNaN(costito) ? 0 : costito) + '$ y ' + (isNaN(decimal) ? 0 : decimal.toFixed(1)) + 'Bs'
   }
 
   return (
